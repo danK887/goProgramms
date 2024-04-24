@@ -1,14 +1,22 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func IsTriangle(a, b, c int) bool {
-	if a+b > c && a > 0 && b > 0 && c > 0 {
-		return true
+	if a > b {
+		a, b = b, a
 	}
-	return false
+	if a > c {
+		a, c = c, a
+	}
+	if b > c {
+		b, c = c, b
+	}
+	return a+b > c && a > 0 && b > 0 && c > 0
 }
 
 func main() {
-	fmt.Println(IsTriangle(0, 6, 3))
+	fmt.Println(IsTriangle(2, 5, 1))
 }
