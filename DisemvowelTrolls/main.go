@@ -1,15 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func Disemvowel(comment string) string {
 	result := ""
-	vowelArray := []rune{'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}
-	for _, vowel := range comment {
-		for _, vowelArrayElement := range vowelArray {
-			if vowel == vowelArrayElement {
-				result += string(vowel)
-			}
+	vowelString := "aeiouAEIOU"
+	for _, char := range comment {
+		if !strings.ContainsRune(vowelString, char) {
+			result += string(char)
 		}
 	}
 	return result
