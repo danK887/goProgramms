@@ -23,4 +23,3 @@ func IsValidWalk(walk []rune) bool {
 func main() {
 	fmt.Println(IsValidWalk([]rune{'n', 'e', 's', 'w', 'n', 's', 'w', 'n', 's'}))
 }
-Take a Ten Minutes Walk
