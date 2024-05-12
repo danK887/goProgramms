@@ -42,27 +42,6 @@ func LongestConsec(strarr []string, k int) string {
 }
 
 func main() {
-	fmt.Println(LongestConsec([]string{"ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"}, 1)) // "abigailtheta"
+	fmt.Println(LongestConsec([]string{"ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"}, 1)) 
 }
 
-// func concatenateEveryThreeStrings(arr []string) []string {
-// 	var result []string
-// 	z := 3
-// 	for i := 0; i < len(arr); i++ {
-// 		end := i + z
-// 		if end > len(arr) {
-// 			end = len(arr)
-// 		}
-// 		result = append(result, strings.Join(arr[i:end], ""))
-// 	}
-
-// 	return result
-// }
-
-// func main() {
-// 	arr := []string{"zone", "abigail", "theta", "form", "libe", "zas"} // "abigailtheta"
-// 	z := 3
-// 	result := concatenateEveryThreeStrings(arr)
-
-// 	fmt.Println(result[:len(result)-(z-1)])
-// }
