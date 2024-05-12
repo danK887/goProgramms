@@ -26,7 +26,7 @@ func OverTheRoad(address int, n int) int {
 }
 
 func main() {
-	fmt.Println(OverTheRoad(6, 4)) //6
+	fmt.Println(OverTheRoad(7, 4)) //6
 }
 
 // 1|   |8
