@@ -9,6 +9,19 @@ func LongestConsec(strarr []string, k int) string {
 	if k <= 0 || len(strarr) == 0 || len(strarr) < k {
 		return ""
 	}
+	if k == 1 {
+		longestWord := ""
+		maxLength := 0
+
+		for _, word := range strarr {
+			if len(word) > maxLength {
+				maxLength = len(word)
+				longestWord = word
+			}
+		}
+
+		return longestWord
+	}
 	total := ""
 	var result []string
 	for i := 0; i < len(strarr); i++ {
@@ -18,7 +31,6 @@ func LongestConsec(strarr []string, k int) string {
 		}
 		result = append(result, strings.Join(strarr[i:end], ""))
 	}
-	result = result[:len(result)-(k-1)]
 	lenStr := 0
 	for i := 0; i < len(result)-1; i++ {
 		if len(result[i]) > lenStr {
