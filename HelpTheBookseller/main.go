@@ -34,11 +34,12 @@ func StockList(listArt []string, listCat []string) string {
 			total += fmt.Sprintf("(%s : %d)", val, countMap[val])
 		}
 	}
-
-	fmt.Println(totalCount)
+	if len(listArt) == 0 || len(listCat) == 0 {
+		return ""
+	}
 	return total
 }
 
 func main() {
-	fmt.Println(StockList([]string{"BBAR 0", "CDXE 0", "WVBSD 0", "BKWR 0", "BTSQ 0", "DRTY 0"}, []string{"A", "B", "W", "C", "D"}))
+	fmt.Println(StockList([]string{"BBAR 40", "CDXE 0", "WVBSD 230", "BKWR 70", "BTSQ 5430", "DRTY 1054"}, []string{"A", "B", "W", "C", "D"}))
 }
