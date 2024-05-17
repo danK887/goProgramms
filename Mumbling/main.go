@@ -8,16 +8,22 @@ import (
 func Accum(s string) string {
 	result := []string{}
 	letStr := ""
+	total := []string{}
+	capital := ""
 	counter := 0
 	for _, c := range s {
 		letStr = ""
 		for i := 0; i <= counter; i++ {
 			letStr += string(c)
 		}
-		result = append(result, letStr)
+		total = append(total, letStr)
 		counter++
 	}
-	//fmt.Println(result)
+	for _, word := range total {
+		capital = strings.ToUpper(string(word[0])) + strings.ToLower(word[1:])
+		result = append(result, capital)
+	}
+	//return capital
 	return strings.Join(result, "-")
 }
 
