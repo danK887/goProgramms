@@ -4,23 +4,21 @@ import (
 	"fmt"
 )
 
-type MyStruct struct {
-	name string
-	age  int
-	sex  string
-}
-
-func userInfo(m *MyStruct) {
-	m.name = "gge"
+type account struct {
+	value int
 }
 
 func main() {
-	var m MyStruct
-	userInfo(&m)
-	fmt.Println(m.name)
+	s1 := make([]account, 0, 2)
+	s1 = append(s1, account{})  //[{0}]
+	s2 := append(s1, account{}) //[{0},{0}]
 
-	a := 12
-	b := &a
-	fmt.Println(*b)
+	acc := &s2[0]
 
+	acc.value = 100
+	fmt.Println(s1, s2) // [{100}] [{100}, {0}]
+
+	s1 = append(s2, account{}) // [{100}, {0}, {0}]
+	acc.value += 100
+	fmt.Println(s1, s2) //[{100}, {0}, {0}] [{200},{0}]
 }
